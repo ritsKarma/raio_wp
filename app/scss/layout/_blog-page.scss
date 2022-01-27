@@ -1,0 +1,22 @@
+.blog-page {
+  display: relative;
+  p {
+    // margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  h1 {
+    color: #000;
+    margin-bottom: 0.5rem;
+  }
+  .blog-wrap {
+    margin-bottom: 5rem;
+  }
+  &__thumbnail > img {
+    width: 100%;
+  }
+  @include breakpoint-up(medium) {
+    &__thumbnail > img {
+      width: 35rem;
+    }
+  }
+}

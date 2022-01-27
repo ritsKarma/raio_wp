@@ -1,0 +1,25 @@
+.hero {
+  &__image {
+    position: relative;
+    background-image: url("/wp-content/themes/radiogc/images/Z45A5416.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 35rem;
+  }
+  @include breakpoint-up(medium) {
+    &__image {
+      background-image: url("/wp-content/themes/radiogc/images/hero.png");
+      min-height: 48rem !important;
+    }
+  }
+
+  &__text {
+    text-align: center;
+    @include breakpoint-up(large) {
+      display: flex;
+      justify-content: end;
+      text-align: left;
+    }
+  }
+}

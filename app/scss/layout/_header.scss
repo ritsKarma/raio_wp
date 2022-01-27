@@ -1,0 +1,125 @@
+.header {
+  // position: relative;
+  // z-index: 1;
+
+  //hamburger open Styles
+  &.open {
+    .overlay {
+      display: block;
+    }
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+      > span:nth-child(2) {
+        opacity: 0;
+      }
+
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: linear-gradient($primary, transparent);
+  }
+
+  nav {
+    // padding-top: 1.0625rem;
+    // padding-bottom: 1.0625rem;
+    position: relative;
+    //background-color: white;
+    //padding: 10px;
+  }
+
+  &__logo {
+    img {
+      width: 7.125rem;
+      height: 7.125rem;
+    }
+  }
+  &__toggle {
+    //Mobile Menu toggle
+
+    > span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background-color: $secondary;
+      transition: all 300ms ease-in-out;
+      transform-origin: 3px 1px;
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+    }
+  }
+  &__menu {
+    position: absolute;
+    width: calc(100% - 3rem);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    // margin-top: 1.5rem;
+    padding: 1.625rem;
+    border-radius: 5px;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    a {
+      display: block;
+      color: $light-grey;
+      padding: 0.625rem;
+      text-align: center;
+    }
+  }
+  &__links {
+    ul {
+      display: flex;
+      list-style: none;
+    }
+    li {
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+    }
+    a {
+      position: relative;
+      // font-size: $font-sm;
+      color: $primary;
+      transition: color 400ms ease-in-out;
+
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 5px;
+        left: 0;
+        right: 0;
+        bottom: -30px;
+        background: linear-gradient(to right, $primary, $light-grey);
+        opacity: 0;
+        transition: opacity 300ms ease-in-out;
+      }
+
+      &:hover {
+        color: $light-grey;
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
