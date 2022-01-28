@@ -99,15 +99,32 @@
       <div class="archive__grid ">
       <?php 
           $homepageEvents = new WP_Query(array(
-            'posts_per_page' => 3,
+            'posts_per_page' => 2,
             'post_type' => 'event'
           ));
 
           while($homepageEvents -> have_posts()){
             $homepageEvents->the_post(); ?>
             
-          <div class="archive__item">
-          <div class="events__icon"><img src="<?php echo get_template_directory_uri();?>/images/car-green.jpeg"></div>
+       <div class="events__item">
+          <div class="events__icon"><a href="<?php the_permalink();?>"><img src="<?php echo get_the_post_thumbnail_url();?> "></div>
+          <div class="events__description">
+            <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
+            <p><?php if (has_excerpt()){
+              echo get_the_excerpt();
+            } else {
+              echo wp_trim_words(get_the_content(), 15); 
+            }
+            ?></p>
+            <h5><a href="<?php the_permalink();?>">keep reading ...</h5>
+            <div class="user">
+              
+              <div class="user-info">
+                
+                <small><?php the_date('F j, Y'); ?></small>
+              </div>
+            </div>
+          </div>
         </div>
     
           <?php }

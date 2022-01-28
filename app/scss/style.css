@@ -208,6 +208,10 @@ body .button:hover {
 .archive__intro {
   text-align: center;
 }
+.archive__intro h1,
+.archive__intro h2 {
+  color: #ff0f59;
+}
 .archive__grid {
   width: 100%;
   display: flex;

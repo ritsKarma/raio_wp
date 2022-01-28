@@ -7,7 +7,7 @@
                   All Events
                   <!-- <?php the_archive_title(); ?> -->
                 </h1>
-                <h2><?php the_archive_description(); ?></h2>
+                <h3><?php the_archive_description(); ?></h3>
                 <!-- <h2>hero Subheading</h2> -->
                 <a href="#" class="button hide-for-desktop">Play Radio</button>
                 </a>
