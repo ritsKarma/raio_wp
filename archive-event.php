@@ -4,7 +4,8 @@
     <div class="hero__text container container--px  ">
             <div>
               <h1>
-                  <?php the_archive_title(); ?>
+                  All Events
+                  <!-- <?php the_archive_title(); ?> -->
                 </h1>
                 <h2><?php the_archive_description(); ?></h2>
                 <!-- <h2>hero Subheading</h2> -->

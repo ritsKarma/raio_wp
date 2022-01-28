@@ -63,7 +63,7 @@
           <div class="events__icon"><a href="<?php the_permalink();?>"><img src="<?php echo get_the_post_thumbnail_url();?> "></div>
           <div class="events__description">
             <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-            <p><?php echo wp_trim_words(get_the_content(), 25);?></p>
+            <p><?php echo wp_trim_words(get_the_content(), 15);?></p>
             <h5><a href="<?php the_permalink();?>">keep reading ...</h5>
             <div class="user">
               <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
@@ -92,31 +92,30 @@
   <section class="archive">
     <div class="archive__content  container container--pall">
       <div class=" archive__intro">
-        <h2>From the Vault</h2>
+        <h2>Latest Events</h2>
         <h3>Collection</h3>
+        
       </div>
       <div class="archive__grid ">
+      <?php 
+          $homepageEvents = new WP_Query(array(
+            'posts_per_page' => 3,
+            'post_type' => 'event'
+          ));
 
-        <div class="archive__item">
+          while($homepageEvents -> have_posts()){
+            $homepageEvents->the_post(); ?>
+            
+          <div class="archive__item">
           <div class="events__icon"><img src="<?php echo get_template_directory_uri();?>/images/car-green.jpeg"></div>
-
         </div>
-        <div class="archive__item">
-          <div class="events__icon"><img src="<?php echo get_template_directory_uri();?>/images/car-green.jpeg"></div>
+    
+          <?php }
 
+        ?>
         </div>
-        <div class="archive__item">
-          <div class="events__icon"><img src="<?php echo get_template_directory_uri();?>/images/car-green.jpeg"></div>
-
-        </div>
-        <div class="archive__item">
-          <div class="events__icon"><img src="<?php echo get_template_directory_uri();?>/images/car-green.jpeg"></div>
-
-        </div>
-
-      </div>
-      <a href="#" class="events__button">View all</a>
-    </div>
+   
+    <a href="#" class="events__button">View all</a>
   </section>
 
  
