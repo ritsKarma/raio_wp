@@ -48,7 +48,7 @@
      ?>
 
     <hr class ="section break">
-     <h3> Looking for a recap of past events? <a href="<?php echo site_url('/past-events')?>"</a>check out our past events archive. </h3>
+     <h3> Looking for a recap of past events ? <a href="<?php echo site_url('/past-events')?>"</a>check out our past events archive. </h3>
 
       </section>
 
