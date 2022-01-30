@@ -43,7 +43,7 @@
     </div>
   </section>
 
-  <!-- section Events -->
+  <!-- section Blog-->
   <section class="events">
     <div class="events__content  container container--pall">
       <div class=" events__intro">
@@ -74,7 +74,7 @@
               <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
               <div class="user-info">
                 <h5><?php the_author_posts_link(); ?></h5>
-                <small><?php the_date('F j, Y'); ?></small>
+                <small><?php the_date('d/m/Y'); ?></small>
               </div>
             </div>
           </div>
@@ -89,7 +89,7 @@
       
       
         </section>
-       
+   <!-- Blog end-->    
       
         
      
@@ -97,18 +97,19 @@
   <section class="archive">
     <div class="archive__content  container container--pall">
       <div class=" archive__intro">
-        <h2>Latest Events</h2>
+        <h2>Upcoming Events</h2>
         <h3>Collection</h3>
         
       </div>
       <div class="archive__grid ">
+        
       <?php 
-      $today= date('Y-m-d H:i:s');
-          $homepageEvents = new WP_Query(array(
+      $today= date('dmy');
+      $homepageEvents = new WP_Query(array(
             'posts_per_page' => 3,
             'post_type' => 'event',
             'meta_key' => 'event_date',
-            'order_by' => 'meta_value_num',
+            'orderby' => 'meta_value_num',
             'order' => 'ASC',
             'meta_query' => array(
               array(
@@ -116,14 +117,15 @@
                 'compare' => '>=',
                 'value' => $today,
                 'type' => 'numeric'
-              )
-            )
-          ));
-
+             
+          )
+        )
+              ));
+ 
           while($homepageEvents -> have_posts()){
             $homepageEvents->the_post(); ?>
             
-       <div class="events__item">
+        <div class="events__item">
           <div class="events__icon"><a href="<?php the_permalink();?>"><img src="<?php echo get_the_post_thumbnail_url();?> "></div>
           <div class="events__description">
             <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
@@ -133,12 +135,10 @@
               echo wp_trim_words(get_the_content(), 15); 
             }
             ?></p>
-            <h5><a href="<?php the_permalink();?>">keep reading ...</h5>
+            <h5><a href="<?php the_permalink();?>">keep reading ... </a></h5>
             <div class="user">
-              
               <div class="user-info">
-                
-                <small><?php the_field('event_date'); ?></small>
+                <small> planned on <?php the_field('event_date'); ?></small>
               </div>
             </div>
           </div>
