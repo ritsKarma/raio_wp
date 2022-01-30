@@ -63,7 +63,12 @@
           <div class="events__icon"><a href="<?php the_permalink();?>"><img src="<?php echo get_the_post_thumbnail_url();?> "></div>
           <div class="events__description">
             <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
-            <p><?php echo wp_trim_words(get_the_content(), 15);?></p>
+            <p><?php if (has_excerpt()){
+              echo get_the_excerpt();
+            } else {
+              echo wp_trim_words(get_the_content(), 15); 
+            }
+            ?></p>
             <h5><a href="<?php the_permalink();?>">keep reading ...</h5>
             <div class="user">
               <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
@@ -98,9 +103,21 @@
       </div>
       <div class="archive__grid ">
       <?php 
+      $today= date('Y-m-d H:i:s');
           $homepageEvents = new WP_Query(array(
-            'posts_per_page' => 2,
-            'post_type' => 'event'
+            'posts_per_page' => 3,
+            'post_type' => 'event',
+            'meta_key' => 'event_date',
+            'order_by' => 'meta_value_num',
+            'order' => 'ASC',
+            'meta_query' => array(
+              array(
+                'key' => 'event_date',
+                'compare' => '>=',
+                'value' => $today,
+                'type' => 'numeric'
+              )
+            )
           ));
 
           while($homepageEvents -> have_posts()){
@@ -121,7 +138,7 @@
               
               <div class="user-info">
                 
-                <small><?php the_date('F j, Y'); ?></small>
+                <small><?php the_field('event_date'); ?></small>
               </div>
             </div>
           </div>
@@ -132,7 +149,7 @@
         ?>
         </div>
    
-    <a href="#" class="events__button">View all</a>
+    <a href="<?php echo get_post_type_archive_link('event')?>" class="events__button">View all</a>
   </section>
 
  

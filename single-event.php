@@ -28,7 +28,8 @@ while (have_posts()){
         <div class=" container container--pall blog-page">
             <h1><?php the_title(); ?></h1>
              <div class= "metabox">
-            <p>posted on <?php the_date('F j, Y'); ?> in <?php echo get_the_category_list(', ');?></p>
+            <!-- <p>posted on <?php the_date('F j, Y'); ?> in <?php echo get_the_category_list(', ');?></p> -->
+            <p>planned on <?php the_field('event_date');?></p>
           </div>
           <!-- <div class= "blog-page__thumbnail">
              <img src='<?php echo get_the_post_thumbnail_url();?>' href="<?php the_permalink();?>">

@@ -31,7 +31,8 @@
           <h1><a href="<?php the_permalink();?>"><?php the_title();?></a></h1>
 
           <div class= "metabox">
-           <p>posted by <?php echo the_author_posts_link();?> on <?php the_date('F j, Y'); ?> in <?php echo get_the_category_list(', ');?></p>
+           <!-- <p>posted by <?php echo the_author_posts_link();?> on <?php the_date('F j, Y'); ?> in <?php echo get_the_category_list(', ');?></p> -->
+           <p>planned on <?php the_field('event_date');?></p>
           </div>
           <div class= "blog-page__thumbnail">
              <img src='<?php echo get_the_post_thumbnail_url();?>' href="<?php the_permalink();?>">
