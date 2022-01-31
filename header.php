@@ -41,12 +41,7 @@
         </nav>
 
         <div class="header__menu has-fade ">
-          <!-- <a href="">Home</a>
-          <a href="">About Us</a>
-           <a href="">Features</a> 
-          <a href="">Blog</a>
-          <a href="">Our Shows</a>
-          <a href="">Contact Us</a> -->
+         
           <?php wp_nav_menu( array(
                'theme_location' => 'headerMenuLocation'
              ));

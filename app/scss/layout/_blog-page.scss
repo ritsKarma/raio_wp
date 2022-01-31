@@ -12,11 +12,11 @@
     margin-bottom: 5rem;
   }
   &__thumbnail > img {
-    width: 100%;
+    max-width: 100%;
   }
   @include breakpoint-up(medium) {
     &__thumbnail > img {
-      width: 35rem;
+      // width: 35rem;
     }
   }
 }

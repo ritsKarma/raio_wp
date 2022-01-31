@@ -35,19 +35,21 @@
            <p>planned on <?php the_field('event_date');?></p>
           </div>
           <div class= "blog-page__thumbnail">
-             <img src='<?php echo get_the_post_thumbnail_url();?>' href="<?php the_permalink();?>">
+          <?php the_post_thumbnail('archiveThumb'); ?>   
+          <!-- <img src='<?php echo get_the_post_thumbnail_url();?>' href="<?php the_permalink();?>"> -->
           </div>
           <div class= "generic-content">
             <p><?php the_excerpt();?> </p>
       <a href="<?php the_permalink();?>" class="events__button">Read more</a>
           </div>
-      </div>
+        </div>
+        <hr class ="section break">
 
      <?php }
      echo paginate_links();
      ?>
 
-    <hr class ="section break">
+   
      <h3> Looking for a recap of past events ? <a href="<?php echo site_url('/past-events')?>"</a>check out our past events archive. </h3>
 
       </section>

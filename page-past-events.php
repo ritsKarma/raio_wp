@@ -53,7 +53,8 @@
            <p>was organised on <?php the_field('event_date');?></p>
           </div>
           <div class= "blog-page__thumbnail">
-             <img src='<?php echo get_the_post_thumbnail_url();?>' href="<?php the_permalink();?>">
+          <?php the_post_thumbnail('archiveThumb'); ?>   
+          <!-- <img src='<?php echo get_the_post_thumbnail_url();?>' href="<?php the_permalink();?>"> -->
           </div>
           <div class= "generic-content">
             <p><?php the_excerpt();?> </p>

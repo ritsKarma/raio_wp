@@ -60,7 +60,10 @@
           while($homepagePosts -> have_posts()){
             $homepagePosts->the_post(); ?>
              <div class="events__item">
-          <div class="events__icon"><a href="<?php the_permalink();?>"><img src="<?php echo get_the_post_thumbnail_url();?> "></div>
+          <!-- <div class="events__icon"><a href="<?php the_permalink();?>"><img src="<?php echo get_the_post_thumbnail_url('homepageThumb');?> "></div> -->
+          <div class="events__icon">
+            <?php the_post_thumbnail('homepageThumb'); ?>
+          </div>
           <div class="events__description">
             <h3><a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
             <p><?php if (has_excerpt()){

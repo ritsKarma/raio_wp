@@ -12,8 +12,9 @@ function radiogc_features(){
     register_nav_menu('headerMenuLocation', 'Header Menu Location');
     register_nav_menu('footerMenuLocation', 'Footer Menu Location');
     add_theme_support('title-tag');
-    	
-add_theme_support( 'post-thumbnails' );
+     add_theme_support( 'post-thumbnails' );
+     add_image_size('homepageThumb', 300 , 230, true);
+     add_image_size('archiveThumb', 550 , 370, true);
 }
 add_action('after_setup_theme', 'radiogc_features');
 
