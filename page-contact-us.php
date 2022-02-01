@@ -53,9 +53,9 @@
             </div>
             <div class="contact__info">
                 <h2>Contact Information</h2>
-                <p><span>adress</span> 334 Garhi cantt Dehradun, Uttarakhand </p>
-                <p><span>Phone </span>+91 1232345123</p>
-                <p><span>E-mail </span>xyz@gmail.com</p>
+                <p><span>address &nbsp; &nbsp;</span> 334 Garhi cantt Dehradun, Uttarakhand </p>
+                <p><span>Phone &nbsp; &nbsp;  </span>+91 1232345123</p>
+                <p><span>E-mail &nbsp; &nbsp; </span>xyz@gmail.com</p>
             </div>
         </div>
 

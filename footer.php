@@ -56,7 +56,7 @@
 
 
       <div class="footer__cta">
-        <a href="#" class="button">Reach Us</a>
+        <a href="<?php echo get_permalink( get_page_by_path( 'contact-us' ) ); ?>" class="button">Reach Us</a>
         <p> Radio GhamChhaya. All Rights Reserved.</p>
       </div>
       <!-- <div class="footer__copyright">
